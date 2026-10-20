@@ -11,3 +11,8 @@
 
 # Workshop Semana 11 - Redisenio UX/UI para UNIreserve
 Aplicacion movil de gestion y reserva de espacios universitarios.
+
+---
+## 📦 Código Fuente Completo y Ejecutable APK
+
+- **Repositorio del Código Fuente (Backend, Mobile & APK):** [https://github.com/code-corhuila/UNIreservecodigo.git](https://github.com/code-corhuila/UNIreservecodigo.git)
