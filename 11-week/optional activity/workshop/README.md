@@ -5,7 +5,7 @@
 - DOCS_REPO: https://github.com/code-corhuila/uni-reserve-docs.git
 - CODE_REPO: https://github.com/code-corhuila/programacion-movil-2026-b-g1.git
 - BASELINE: APK UNIreserve
-- REFLECTION_DOC: https://docs.google.com/document/d/tu-id-de-google-doc/edit
+- REFLECTION_DOC: https://docs.google.com/document/d/1lwpWKZuiUaZAk4g-ZeP3rnaRk7bZygXVBCYq8J_4laU/edit?usp=sharing
 - MY_SCREENS: Lista de Espacios, Detalle del Espacio, Formulario de Reserva
 <!-- CONFIG-END -->
 
