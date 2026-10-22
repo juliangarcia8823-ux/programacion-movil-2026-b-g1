@@ -9,3 +9,8 @@
 - Redireccion automatica tras confirmar reserva.
 - Indicadores esqueleto durante peticiones API.
 - Validacion obligatoria de motivo academico.
+
+
+## 3. Criterios de Aceptacion Globales
+- Cobertura de pruebas unitarias minima del 80%.
+- Cumplimiento de pautas de accesibilidad WCAG 2.1 AA.
