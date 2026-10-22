@@ -1,12 +1,13 @@
-# CP6 · Formulario con Validación y Retroalimentación
+# CP6: Formulario con Validacion y Retroalimentacion (UNIreserve)
 
-## 1. Reglas de Validación
-- Campo Nombre/Espacio: Requerido, mínimo 3 caracteres.
-- Campo Fecha/Hora: Requerida, no puede ser una fecha pasada.
-- Campo Motivo/Uso: Requerido, mínimo 10 caracteres.
+## 1. Campos y Reglas de Validacion
+- Espacio seleccionado: Obligatorio.
+- Fecha inicio: Posterior a la fecha actual.
+- Duracion: Entre 1 y 4 horas continuas.
+- Motivo: Minimo 10 caracteres.
 
-## 2. Implementación de Retroalimentación
-- Validación en tiempo real al perder el foco (onIonBlur).
-- Mensajes de error claros debajo de cada campo con alto contraste.
-- Botón de envío deshabilitado o con indicación visual si el formulario es inválido.
-- Confirmación visual con IonToast al completar la reserva exitosamente.
+## 2. Retroalimentacion Visual
+- Boton inhabilitado si el formulario es invalido.
+- IonSpinner durante el envio de datos.
+- IonToast al confirmar con exito.
+- IonAlert antes de cancelar.

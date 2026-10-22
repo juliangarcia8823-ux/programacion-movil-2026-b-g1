@@ -1,17 +1,26 @@
-# Auditoria de Estados de la Interfaz - UNIreserve
+# CP3: Manejo de Estados de la Interfaz (UNIreserve)
 
-## Estados Requeridos
+## 1. Estados Implementados en la Pantalla de Lista
+En la vista de catálogo de espacios se gestionan 3 estados para evitar pantallas en blanco:
+1. **Estado Cargando (`IonSkeletonText`)**: Muestra 5 tarjetas esqueleto simulando el diseño real mientras la API responde.
+2. **Estado Vacío**: Mensaje *"No se encontraron espacios académicos disponibles"* con botón para refrescar.
+3. **Estado Error**: Mensaje *"Error de conexión con el servidor de reservas"* con botón *"Reintentar"*.
 
-### 1. Estado de Carga (Loading State)
-- Uso de `IonSkeletonText` para simular la estructura visual de la lista de espacios mientras se obtienen los datos de la API.
+## 2. Mecanismo de Simulación y Pruebas (Vitest)
+Para validar los estados se agregó un parámetro opcional `simulateError=true` y un retardo configurable en el servicio de datos:
 
-### 2. Estado Vacio (Empty State)
-- Mensaje claro con icono e ilustracion cuando no se encuentran espacios disponibles en el filtro seleccionado.
-- Boton de accion rapida: "Limpiar Filtros".
+```tsx
+test('debe mostrar mensaje de error y ejecutar reintento', async () => {
+  render(<EspaciosPage simulateError={true}/>);
+  expect(await screen.findByText(/Error de conexión/i)).toBeInTheDocument();
+  
+  const retryBtn = screen.getByRole('button', { name: /reintentar/i });
+  fireEvent.click(retryBtn);
+  expect(retryBtn).toBeInTheDocument();
+});
+```
 
-### 3. Estado de Error (Error State)
-- Indicador en pantalla cuando la solicitud a la API falla.
-- Boton para reintentar la conexion sin reiniciar la app.
-
-### 4. Estado Exitoso (Success State)
-- Confirmacion mediante `IonToast` y pantalla de resumen al completar la reserva de un espacio.
+## 3. Capturas y Forzado de Estados
+- **Cargando**: `../img/after-loading.png` (Forzado mediante retardo de 2000ms).
+- **Error**: `../img/after-error.png` (Forzado con la bandera `simulateError=true`).
+- **Vacío**: `../img/after-empty.png` (Forzado aplicando un filtro de búsqueda sin coincidencias).
